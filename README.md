@@ -1,2 +1,3 @@
-# comp_macro_practice_fxiang
-computational macro problem sets practice
+# Computation Macro Practice by Fengfan Xiang
+---
+- Problem set 1
