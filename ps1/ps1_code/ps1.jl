@@ -47,11 +47,26 @@ end
 
 # Graphs
 using Plots
+gr()
+
 # (a)
 size_t_a = length(k_path_a);
-t_a = 1:1:size_t_a;
-gr()
-plot(t_a,k_path_a,linewidth=2,marker=(:diamond,9),markercolor=RGB(0.1,0.1,0.1))
-plot(t_a,k_path_a)
+t_a = collect(1:1:size_t_a);
+t_a_start = ones(size_t_a,1);
+t_a_end = ones(size_t_a,1)*size_t_a;
+y_a = collect(0.142:(0.185-0.142)/size_t_a:0.185); 
+
+plot(t_a,k_path_a,linewidth=2,label = "Capital", title = "Part a: Transition Path of k",legend=(0.75,0.2),foreground_color_legend = nothing,background_color_legend = nothing)
+plot!(t_a_start,y_a,linetype=:scatter,marker=(:diamond,2),markercolor=RGB(0.5,0.1,0.1)) 
+plot!(t_a_end,y_a,linetype=:scatter,marker=(:diamond,2),markercolor=RGB(0.1,0.1,0.1),lable= nothing, legend = nothing) 
 
 # (b）
+size_t_b = length(k_path_b);
+t_b = collect(1:1:size_t_b);
+t_b_start = ones(size_t_b,1);
+t_b_end = ones(size_t_b,1)*size_t_b;
+y_b = collect(0.18:(0.198-0.18)/size_t_b:0.198);
+
+plot(t_b,k_path_b,linewidth=2,label = "Capital", title = "Part b: Transition Path of k",legend=(0.75,0.2),foreground_color_legend = nothing,background_color_legend = nothing)
+plot!(t_b_start,y_b,linetype=:scatter,marker=(:diamond,2),markercolor=RGB(0.5,0.1,0.1)) 
+plot!(t_b_end,y_b,linetype=:scatter,marker=(:diamond,2),markercolor=RGB(0.1,0.1,0.1), legend = nothing) 

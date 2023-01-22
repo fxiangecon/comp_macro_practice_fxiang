@@ -1,2 +1,3 @@
 *.lyx~
+*.svg
 .DS_Store
