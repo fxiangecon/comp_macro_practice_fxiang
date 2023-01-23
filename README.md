@@ -3,7 +3,7 @@
 #### Western University
 #### Contact: fxiang8@uwo.ca
 This repository is for my auditing Sergio Ocampo's Winter 2023 Computational Macro Class.<br/>
-The course materials can be found at [https://github.com/fxiangecon/PhD_Macro_Course_Western](https://github.com/ocamp020/PhD_Macro_Course_Western).<br/>
+The course materials can be found at (https://github.com/ocamp020/PhD_Macro_Course_Western).<br/>
 Of course, all errors are mine.<br/>
 
 ## Submission List
