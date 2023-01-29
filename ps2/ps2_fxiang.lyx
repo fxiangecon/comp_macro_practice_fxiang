@@ -91,17 +91,6 @@ Fengfan Xiang
 
 \begin_layout Section
 Definition of the Competitive Equilibrium
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-For simplicity, I assume all the standard neoclassical assumptions holds
- for this problem set.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -110,15 +99,15 @@ Given
 \end_inset
 
 , a competitive equilibrium consists of prices 
-\begin_inset Formula $\left\{ p_{t},\omega_{t},r_{t}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ \omega_{t},r_{t}\right\} _{t=0}^{\infty}$
 \end_inset
 
 , the allocation for the representative agent 
-\begin_inset Formula $\left\{ c_{t},i_{t},k_{t}^{s},l_{t}^{s}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ c_{t},k_{t+1}^{s},\ell_{t}^{s}\right\} _{t=0}^{\infty}$
 \end_inset
 
  and the allocation for the representative firm 
-\begin_inset Formula $\left\{ k_{t}^{d},l_{t}^{d}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ k_{t}^{d},\ell_{t}^{d}\right\} _{t=0}^{\infty}$
 \end_inset
 
  such that
@@ -126,17 +115,17 @@ Given
 
 \begin_layout Enumerate
 Given prices 
-\begin_inset Formula $\left\{ p_{t},\omega_{t},r_{t}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ \omega_{t},r_{t}\right\} _{t=0}^{\infty}$
 \end_inset
 
 , the allocation for the representative agent 
-\begin_inset Formula $\left\{ c_{t},i_{t},k_{t}^{s},l_{t}^{s}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ c_{t},k_{t+1}^{s},\ell_{t}^{s}\right\} _{t=0}^{\infty}$
 \end_inset
 
  solves
 \begin_inset Formula 
 \[
-\max_{\left\{ c_{t},i_{t},k_{t},l_{t}\right\} _{t=0}^{\infty}}\sum_{t=0}^{\infty}\beta^{t}u\left(c_{t}\right)
+\max_{\left\{ c_{t},k_{t+1},\ell_{t}\right\} _{t=0}^{\infty}}\sum_{t=0}^{\infty}\beta^{t}\left(\frac{c_{t}^{1-\sigma}}{1-\sigma}-\chi\frac{\ell_{t}^{1+\eta}}{1+\eta}\right)
 \]
 
 \end_inset
@@ -144,7 +133,7 @@ Given prices
 subject to
 \begin_inset Formula 
 \[
-\sum_{t=0}^{\infty}p_{t}\left(c_{t}+i_{t}\right)\leq\sum_{t=0}^{\infty}p_{t}\left(r_{t}k_{t}+\omega_{t}l_{t}\right)+\pi
+c_{t}+k_{t+1}-\left(1-\sigma\right)k_{t}\leq r_{t}k_{t}+\omega_{t}\ell_{t}\quad\forall t,
 \]
 
 \end_inset
@@ -152,7 +141,7 @@ subject to
 
 \begin_inset Formula 
 \[
-k_{t+1}=i_{t}\geq0\quad\forall t
+0\leq\ell_{t}\leq1\quad\forall t,
 \]
 
 \end_inset
@@ -160,23 +149,7 @@ k_{t+1}=i_{t}\geq0\quad\forall t
 
 \begin_inset Formula 
 \[
-0\leq l_{t}\leq1\quad\forall t
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-c_{t}\geq0\quad\forall t
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-k_{0}\quad\text{given}
+k_{0}\quad\text{given}.
 \]
 
 \end_inset
@@ -186,17 +159,17 @@ k_{0}\quad\text{given}
 
 \begin_layout Enumerate
 Given prices 
-\begin_inset Formula $\left\{ p_{t},\omega_{t},r_{t}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ \omega_{t},r_{t}\right\} _{t=0}^{\infty}$
 \end_inset
 
 , the allocation for the representative firm 
-\begin_inset Formula $\left\{ k_{t}^{d},l_{t}^{d}\right\} _{t=0}^{\infty}$
+\begin_inset Formula $\left\{ k_{t}^{d},\ell_{t}^{d}\right\} _{t=0}^{\infty}$
 \end_inset
 
  solves
 \begin_inset Formula 
 \[
-\pi=\max_{\left\{ k_{t},l_{t}\right\} _{t=0}^{\infty}}\sum_{t=0}^{\infty}p_{t}\left[F\left(k_{t},l_{t}\right)-r_{t}k_{t}-\omega_{t}l_{t}\right]
+\max_{\left\{ k_{t},\ell_{t}\right\} _{t=0}^{\infty}}\sum_{t=0}^{\infty}zk_{t}^{\alpha}\ell_{t}^{1-\alpha}-r_{t}k_{t}-\omega_{t}\ell_{t}
 \]
 
 \end_inset
@@ -204,7 +177,7 @@ Given prices
 subject to
 \begin_inset Formula 
 \[
-k_{t}\geq0\quad\forall t
+k_{t}\geq0\quad\forall t,
 \]
 
 \end_inset
@@ -212,7 +185,7 @@ k_{t}\geq0\quad\forall t
 
 \begin_inset Formula 
 \[
-l_{t}\geq0\quad\forall t
+\ell_{t}\geq0\quad\forall t.
 \]
 
 \end_inset
@@ -224,7 +197,7 @@ l_{t}\geq0\quad\forall t
 Marker Clear
 \begin_inset Formula 
 \[
-y_{t}=c_{t}+i_{t}\quad\forall t
+c_{t}+k_{t+1}-\left(1-\sigma\right)k_{t}=zk_{t}^{\alpha}\ell_{t}^{1-\alpha}\quad\forall t;
 \]
 
 \end_inset
@@ -232,7 +205,7 @@ y_{t}=c_{t}+i_{t}\quad\forall t
 
 \begin_inset Formula 
 \[
-l_{t}^{d}=l_{t}^{s}\quad\forall t
+\ell_{t}^{d}=\ell_{t}^{s}\quad\forall t;
 \]
 
 \end_inset
@@ -240,7 +213,7 @@ l_{t}^{d}=l_{t}^{s}\quad\forall t
 
 \begin_inset Formula 
 \[
-k_{t}^{d}=k_{t}^{s}\quad\forall t
+k_{t}^{d}=k_{t}^{s}\quad\forall t.
 \]
 
 \end_inset
@@ -249,22 +222,263 @@ k_{t}^{d}=k_{t}^{s}\quad\forall t
 \end_layout
 
 \begin_layout Section
-Deﬁnition of the Social Planner’s Problem
+Find the Steady State Values
 \end_layout
 
 \begin_layout Standard
-Given 
-\begin_inset Formula $k_{0}$
-\end_inset
-
-, a social planner's problem consists of a feasible allocation 
-\begin_inset Formula $\left\{ c_{t},k_{t},l_{t}\right\} _{t=0}^{\infty}$
-\end_inset
-
- which solves
+F.O.C.s for the representative agent's problem
 \begin_inset Formula 
 \[
-\max_{\left\{ c_{t},k_{t},l_{t}\right\} _{t=0}^{\infty}}\sum_{t=0}^{\infty}\beta^{t}u\left(c_{t}\right)
+\beta^{t}c_{t}^{-\sigma}-\lambda_{t}^{1}=0;
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-\lambda_{t}^{1}+\lambda_{t+1}^{1}\left(r_{t}+1-\sigma\right)=0;
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-\beta^{t}\chi\ell_{t}^{\eta}+\lambda_{t}^{1}\omega_{t}-\lambda_{t}^{3}=0;
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda_{t}^{3}\left(1-\ell_{t}\right)=0.
+\]
+
+\end_inset
+
+F.O.C.s for the representative firm's problem
+\begin_inset Formula 
+\[
+r_{t}=\alpha zk_{t}^{\alpha-1}\ell_{t}^{1-\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\omega_{t}=\left(1-\alpha\right)zk_{t}^{\alpha}\ell_{t}^{-\alpha}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After some manipulations, there are two cases and the following equations
+ characterize the equilibria.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Case 1: 
+\begin_inset Formula $\ell_{t}<1$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{t}^{3}=0$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\[
+c_{t}^{-\sigma}=\beta c_{t+1}^{-\sigma}\left(\alpha zk_{t}^{\alpha-1}\ell_{t}^{1-\alpha}+1-\sigma\right);
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c_{t}+k_{t+1}-\left(1-\sigma\right)k_{t}=zk_{t}^{\alpha}\ell_{t}^{1-\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\chi\ell_{t}^{\eta}=c_{t}^{-\sigma}\left(1-\alpha\right)zk_{t}^{\alpha}\ell_{t}^{-\alpha}\quad\text{and}\quad\text{\ensuremath{\ell_{t}<1}}.
+\]
+
+\end_inset
+
+
+\series bold
+Case 2: 
+\begin_inset Formula $\ell_{t}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{t}^{3}>0$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\[
+c_{t}^{-\sigma}=\beta c_{t+1}^{-\sigma}\left(\alpha zk_{t}^{\alpha-1}\ell_{t}^{1-\alpha}+1-\sigma\right);
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c_{t}+k_{t+1}-\left(1-\sigma\right)k_{t}=zk_{t}^{\alpha}\ell_{t}^{1-\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-\chi\ell_{t}^{\eta}+c_{t}^{-\sigma}\left(1-\alpha\right)zk_{t}^{\alpha}\ell_{t}^{-\alpha}>0\quad\text{and}\quad\ell_{t}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In steady state, under case 1, 
+\begin_inset Formula $\left\{ c,\ell,k,y,r,w\right\} $
+\end_inset
+
+ solves
+\begin_inset Formula 
+\[
+1=\beta\left(\alpha zk^{\alpha-1}\ell^{1-\alpha}+1-\sigma\right);
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c+\sigma k=zk^{\alpha}\ell^{1-\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\chi\ell^{\eta}=c^{-\sigma}\left(1-\alpha\right)zk^{\alpha}\ell^{-\alpha}\quad\text{and}\quad\text{\ensuremath{\ell<1}};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+r=\alpha zk^{\alpha-1}\ell^{1-\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\omega=\left(1-\alpha\right)zk^{\alpha}\ell^{-\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y=zk^{\alpha}\ell^{1-\alpha}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In steady state, under case 2, 
+\begin_inset Formula $\left\{ c,\ell,k,y,r,w\right\} $
+\end_inset
+
+ solves
+\begin_inset Formula 
+\[
+1=\beta\left(\alpha zk^{\alpha-1}+1-\sigma\right);
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c+\sigma k=zk^{\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+-\chi+c^{-\sigma}\left(1-\alpha\right)zk^{\alpha}>0;
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+r=\alpha zk^{\alpha-1};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\omega=\left(1-\alpha\right)zk^{\alpha};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y=zk^{\alpha}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pose the Planner's Problem and Write Down the Bellman equation
+\end_layout
+
+\begin_layout Standard
+Planner's Problem
+\begin_inset Formula 
+\[
+\max_{\left\{ c_{t},k_{t+1},\ell_{t}\right\} _{t=0}^{\infty}}\sum_{t=0}^{\infty}\beta^{t}\left(\frac{c_{t}^{1-\sigma}}{1-\sigma}-\chi\frac{\ell_{t}^{1+\eta}}{1+\eta}\right)
 \]
 
 \end_inset
@@ -272,7 +486,7 @@ Given
 subject to
 \begin_inset Formula 
 \[
-F\left(k_{t},l_{t}\right)=c_{t}+k_{t+1}\quad\forall t
+c_{t}+k_{t+1}-\left(1-\sigma\right)k_{t}=zk_{t}^{\alpha}\ell_{t}^{1-\alpha}\quad\forall t,
 \]
 
 \end_inset
@@ -280,7 +494,7 @@ F\left(k_{t},l_{t}\right)=c_{t}+k_{t+1}\quad\forall t
 
 \begin_inset Formula 
 \[
-c_{t}\geq0\quad\forall t
+c_{t}\geq0\quad\forall t,
 \]
 
 \end_inset
@@ -288,7 +502,7 @@ c_{t}\geq0\quad\forall t
 
 \begin_inset Formula 
 \[
-k_{t}\geq0\quad\forall t
+k_{t+1}\geq0\quad\forall t,
 \]
 
 \end_inset
@@ -296,7 +510,27 @@ k_{t}\geq0\quad\forall t
 
 \begin_inset Formula 
 \[
-0\leq l_{t}\leq1\quad\forall t
+0\leq\ell_{t}\leq1\quad\forall t.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bellman equation
+\begin_inset Formula 
+\[
+V\left(k\right)=\max_{c,\ell,k^{\prime}}\left[\frac{c^{1-\sigma}}{1-\sigma}-\chi\frac{\ell^{1+\eta}}{1+\eta}+\beta V\left(k^{\prime}\right)\right]
+\]
+
+\end_inset
+
+subject to
+\begin_inset Formula 
+\[
+c=zk^{\alpha}\ell^{1-\alpha}+\left(1-\delta\right)k-k^{\prime},
 \]
 
 \end_inset
@@ -304,7 +538,23 @@ k_{t}\geq0\quad\forall t
 
 \begin_inset Formula 
 \[
-k_{0}\quad\text{given}
+1\leq\ell\leq1,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c\geq0,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k^{\prime}\geq0.
 \]
 
 \end_inset
@@ -313,390 +563,73 @@ k_{0}\quad\text{given}
 \end_layout
 
 \begin_layout Section
-Show the Equilibrium Allocation of Consumption, Capital, and Labor Coincides
- with Those of the Planner’s
+Find 
+\begin_inset Formula $\chi$
+\end_inset
+
+ such that 
+\begin_inset Formula $\ell_{ss}=0.4$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The Welfare Theorems hold, thus there exists the equivalence between the
- allocation of a competitive equilibrium and the Pareto Optimal allocation.
-\end_layout
+For the case 
+\begin_inset Formula $\ell_{ss}=0.4<1$
+\end_inset
 
-\begin_layout Section
-Pose the Planner’s Dynamic Programming Problem and Write Down the Appropriate
- Bellman Equation
+, we are under case 1.
+ First, we can solve for 
+\begin_inset Formula $\frac{k_{ss}}{\ell_{ss}}$
+\end_inset
+
+ as 
+\begin_inset Formula 
+\[
+\frac{k_{ss}}{\ell_{ss}}=\left[\frac{1}{\alpha z}\left(\frac{1}{\beta}-1+\sigma\right)\right]^{\frac{1}{\alpha-1}}.
+\]
+
+\end_inset
+
+Then, 
+\begin_inset Formula $c_{ss}$
+\end_inset
+
+ can be solved by
+\begin_inset Formula 
+\[
+c_{ss}=\left[z\left(\frac{k_{ss}}{\ell_{ss}}\right)^{\alpha}-\sigma\frac{k_{ss}}{\ell_{ss}}\right]\ell_{ss}.
+\]
+
+\end_inset
+
+Finally, 
+\begin_inset Formula $\chi$
+\end_inset
+
+ that gives a steady state labor as 
+\begin_inset Formula $\ell_{ss}=0.4$
+\end_inset
+
+ can be solved by
+\begin_inset Formula 
+\[
+\chi=c_{ss}^{-\sigma}\left(1-\alpha\right)z\left(\frac{k_{ss}}{\ell_{ss}}\right)^{\alpha}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Recall that 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-I have assumed that 
-\begin_inset Formula $F\left(\cdot,\cdot\right)$
-\end_inset
-
- is strictly increasing in both augments.
- Thus, 
-\begin_inset Formula $l_{t}=1$
-\end_inset
-
- for all 
-\begin_inset Formula $t$
+Use Julia, we can solve for 
+\begin_inset Formula $\chi=22.8494$
 \end_inset
 
 .
- Define 
-\begin_inset Formula $f\left(k_{t}\right)=F\left(k_{t},1\right)$
-\end_inset
-
-, then we can rewrite the social planner's problem as
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-W\left(k_{0}\right)=\max_{\left\{ k_{t+1}\right\} _{t=0}^{\infty}\enskip\text{s.t.}\enskip0\leq k_{t+1}\leq f\left(k_{t}\right)\enskip\forall t}\quad\sum_{t=0}^{\infty}\beta^{t}u\left(f\left(k_{t}\right)-k_{t+1}\right)
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\Rightarrow\quad W\left(k_{0}\right)=\max_{k_{1}\enskip\text{s.t.}\enskip0\leq k_{1}\leq f\left(k_{0}\right)}\left\{ u\left(f\left(k_{0}\right)-k_{1}\right)+\beta\left[\max_{\left\{ k_{t+1}\right\} _{t=1}^{\infty}\enskip\text{s.t.}\enskip0\leq k_{t+1}\leq f\left(k_{t}\right)\enskip\forall t}\quad\sum_{t=1}^{\infty}\beta^{t-1}u\left(f\left(k_{t}\right)-k_{t+1}\right)\right]\right\} 
-\]
-
-\end_inset
-
-This suggests
-\begin_inset Formula 
-\[
-W\left(k_{0}\right)=\max_{k_{1}\enskip\text{s.t.}\enskip0\leq k_{1}\leq f\left(k_{0}\right)}\left[u\left(f\left(k_{0}\right)-k_{1}\right)+\beta W\left(k_{1}\right)\right]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This is the sequential formulation of the 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-social planner's problem, and the recursive formulation of the planner's
- problem, i.e.
- the Bellman equation, can be written as
-\begin_inset Formula 
-\[
-V\left(k\right)=\max_{0\leq k^{\prime}\leq f\left(k\right)}\left[u\left(f\left(k\right)-k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Solve the Planner’s Dynamic Programming Problem given 
-\begin_inset Formula $u\left(c\right)=\log c$
-\end_inset
-
- and 
-\begin_inset Formula $F\left(k,l\right)=zk^{\alpha}l^{1-\alpha}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Guess and verify (of the value function) method.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Step 1:
-\series default
- Guess 
-\begin_inset Formula $V\left(k\right)=A+B\log k$
-\end_inset
-
-, and solve the maximization problem on the RHS of the Bellman equation
- given the guess yields
-\begin_inset Formula 
-\[
-\frac{1}{zk^{\alpha}-k^{\prime}}=\frac{\beta B}{k^{\prime}}\quad\Rightarrow\quad k^{\prime}=\frac{\beta Bzk^{\alpha}}{1+\beta B}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Step 2:
-\series default
- Evaluate the RHS at the optimum 
-\begin_inset Formula $k^{\prime}=\frac{\beta Bk^{\alpha}}{1+\beta B}$
-\end_inset
-
-, then
-\begin_inset Formula 
-\[
-\text{RHS}=\log\left(\frac{zk^{\alpha}}{1+\beta B}\right)+\beta A+\beta B\left(\frac{\beta Bzk^{\alpha}}{1+\beta B}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Rewrite it as 
-\begin_inset Formula 
-\[
-\text{RHS}=\log\left(\frac{z}{1+\beta B}\right)+\alpha\log k+\beta A+\beta B\log\left(\frac{\beta Bz}{1+\beta B}\right)+\alpha\beta B\log\left(k\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Step 3: 
-\series default
-Verify that 
-\begin_inset Formula $\text{LHS=A+B\ensuremath{\log k}=\text{RHS}}$
-\end_inset
-
-, solve for the undetermined coefficients 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
-
-\begin_inset Formula 
-\begin{equation}
-B=\frac{\alpha}{1-\alpha\beta}\label{eq:vfi_analytical_B}
-\end{equation}
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{equation}
-A=\frac{1}{1-\beta}\left[\log\left(z\left(1-\alpha\beta\right)\right)+\frac{\alpha\beta}{1-\alpha\beta}\log\left(\alpha\beta z\right)\right]\label{eq:vfi_analytical_A}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-I can conclude that the value function is 
-\begin_inset Formula $V\left(k\right)=A+B\log k$
-\end_inset
-
- with A and B given in equations (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:vfi_analytical_A"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-) and (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:vfi_analytical_B"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-), respectively.
- While the policy function 
-\begin_inset Formula $k^{\prime}=g\left(k\right)=\frac{\beta Bzk^{\alpha}}{1+\beta B}=\alpha\beta zk^{\alpha}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Steady State Value
-\end_layout
-
-\begin_layout Standard
-In steady state, 
-\begin_inset Formula $\bar{k}=g\left(\bar{k}\right)$
-\end_inset
-
-, 
-\begin_inset Formula 
-\[
-\bar{k}=\alpha\beta z\bar{k}^{\alpha}\quad\Rightarrow\quad\bar{k}=\left(\alpha\beta z\right)^{\frac{1}{1-\alpha}}
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\bar{c}=f\left(\bar{k}\right)-\bar{k}=z\left(\alpha\beta z\right)^{\frac{\alpha}{1-\alpha}}-\left(\alpha\beta z\right)^{\frac{1}{1-\alpha}}
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-r=z\alpha\bar{k}^{\alpha-1}=\frac{1}{\beta}
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\omega=z\left(1-\alpha\right)\bar{k}^{\alpha}=z\left(1-\alpha\right)\left(\alpha\beta z\right)^{\frac{\alpha}{1-\alpha}}
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-y=z\bar{k}^{\alpha}=z\left(\alpha\beta z\right)^{\frac{\alpha}{1-\alpha}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Experiments: Transition Path with 
-\begin_inset Formula $\alpha=\frac{1}{3}$
-\end_inset
-
- and 
-\begin_inset Formula $z=1$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Check Figure 1 and Figure 2.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename plot1.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Capital Decreases to 80% of Steady State Value
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename plot2.png
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Productivity increases permanently by 5%
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \end_body
