@@ -178,10 +178,10 @@ function euler_error_report(n_k,χ,k_ss,p::Par)
         else
             l = 1
         end
-        e_error = Euler_Error(k,kp,kpp,l,p)
+        e_error[i] = Euler_Error(k,kp,kpp,l,p)
     end
     # return
     return e_error
 end
 
-test = euler_error_report(10,χ,k_ss,p)
+test = euler_error_report(1000,χ,k_ss,p)
