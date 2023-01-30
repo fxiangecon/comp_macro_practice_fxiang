@@ -615,7 +615,7 @@ Finally,
  can be solved by
 \begin_inset Formula 
 \[
-\chi=c_{ss}^{-\sigma}\left(1-\alpha\right)z\left(\frac{k_{ss}}{\ell_{ss}}\right)^{\alpha}.
+\chi=c_{ss}^{-\sigma}\left(1-\alpha\right)z\left(\frac{k_{ss}}{\ell_{ss}}\right)^{\alpha}\frac{1}{\left(\ell^{ss}\right)^{\eta}}.
 \]
 
 \end_inset
@@ -625,11 +625,75 @@ Finally,
 
 \begin_layout Standard
 Use Julia, we can solve for 
-\begin_inset Formula $\chi=22.8494$
+\begin_inset Formula $\chi=57.1236$
 \end_inset
 
 .
  
+\end_layout
+
+\begin_layout Section
+Numerical Solutions
+\end_layout
+
+\begin_layout Standard
+Euler equation (obtained with envelop theorem).
+ First, the F.O.C.s can be written as 
+\begin_inset Formula 
+\[
+-\left[zk^{\alpha}\ell^{1-\alpha}+\left(1-\delta\right)k-k^{\prime}\right]^{-\sigma}+\beta V^{\prime}\left(k^{\prime}\right)=0,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(1-\alpha\right)\left[zk^{\alpha}\ell^{1-\alpha}+\left(1-\delta\right)k-k^{\prime}\right]^{-\sigma}zk^{\alpha}\ell^{-\alpha}-\chi\ell^{\eta}=0.
+\]
+
+\end_inset
+
+By envelop theorem, we can also obtain
+\begin_inset Formula 
+\[
+V^{\prime}\left(k\right)=\left[zk^{\alpha}\ell^{1-\alpha}+\left(1-\delta\right)k-k^{\prime}\right]^{-\sigma}\left(\alpha zk^{\alpha-1}\ell^{1-\alpha}+1-\sigma\right).
+\]
+
+\end_inset
+
+Thus, we obtain
+\begin_inset Formula 
+\[
+\left[zk^{\alpha}\ell^{1-\alpha}+\left(1-\delta\right)k-k^{\prime}\right]^{-\sigma}=\beta\left[zk^{\prime\alpha}\ell^{1-\alpha}+\left(1-\delta\right)k^{\prime}-k^{\prime\prime}\right]^{-\sigma}\left(\alpha zk^{\prime\alpha-1}\ell^{1-\alpha}+1-\sigma\right).
+\]
+
+\end_inset
+
+Thus, denote the policy function as 
+\begin_inset Formula $k^{\prime}=g_{k}\left(k\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell=g_{\ell}\left(k\right)$
+\end_inset
+
+, we can rewrite the Euler equation as
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+ & \left[zk^{\alpha}g_{\ell}\left(k\right)^{1-\alpha}+\left(1-\delta\right)k-g_{k}\left(k\right)\right]^{-\sigma}\\
+ & =\beta\left[zg_{k}\left(k\right)^{\alpha}g_{\ell}\left(k\right)^{1-\alpha}+\left(1-\delta\right)g_{k}\left(k\right)-g_{k}\left(g_{k}\left(k\right)\right)\right]^{-\sigma}\left(\alpha zg_{k}\left(k\right)^{\alpha-1}g_{\ell}\left(k\right)^{1-\alpha}+1-\sigma\right)
+\end{array}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can base on this Euler equation to compute the Euler error.
 \end_layout
 
 \end_body
