@@ -167,3 +167,5 @@ for n = (4,6,11,21)
     plot!(xi,yi,linetype=:scatter,marker=(:diamond,9),markercolor=RGB(0.5,0.1,0.1),label = "Data")
     savefig("./Figures/CRRA_Spline_Cubic_n_$n.pdf")
 end
+
+
