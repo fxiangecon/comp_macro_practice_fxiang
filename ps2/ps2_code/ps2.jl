@@ -53,10 +53,7 @@ k_ss = kl_ss_ratio*l_ss;
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 #= Part 5
-        Solve the planner's problem with different methods
-        (a) Plain VFI
-        (b) Howard's Prolicy Iteration
-        (c) MacQueen-Porteus Bounds
+        Solve the planner's problem using: Plain VFI
 =#
 
 #-------------------------------------------------------------------------------
@@ -95,14 +92,14 @@ function Euler_Error(k,kp,kpp,l,p::Par)
     # Return percentage error in Euler Equation
     @unpack z, α, δ, β, σ = p
     LHS = (z*k^α*l^(1-α) + (1-δ)*k - kp)^(-σ)
-    RHS =  β*(z*kp^α^l^(1-α) +(1-δ)*kp - kpp)^(-δ) * (α*z*kp^(α-1)*l^(1-α)+1-σ)
+    RHS =  β*(z*kp^α^l^(1-α) +(1-δ)*kp - kpp)^(-σ) * (α*z*kp^(α-1)*l^(1-α)+1-σ)
     return (RHS/LHS-1)*100
 end
 
 
 #-------------------------------------------------------------------------------
 #= 
-    (a) Plain VFI
+    Plain VFI
 =#
 # VFI - Grid Search - Matrices
 println(" "); println(" "); println(" ")
@@ -184,4 +181,4 @@ function euler_error_report(n_k,χ,k_ss,p::Par)
     return e_error
 end
 
-test = euler_error_report(1000,χ,k_ss,p)
+test = euler_error_report(4000,χ,k_ss,p)
