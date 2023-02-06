@@ -149,7 +149,7 @@ for n = (4,6,11,21)
 end
 
 #= 
-    Plot Spline Piecewise Linear Cubic
+    Plot Spline Cubic
 =#
 for n = (4,6,11,21)
     # Grid of nodes for interpolation
