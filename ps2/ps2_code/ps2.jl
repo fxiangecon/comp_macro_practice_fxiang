@@ -47,7 +47,6 @@ println("χ that gives a steady state labor as 0.4 = ", χ)
 println("------------------------")
 println(" ")
 
-
 k_ss = kl_ss_ratio*l_ss;
 
 #-------------------------------------------------------------------------------
@@ -78,7 +77,7 @@ function utility(k,kp,χ,p::Par)
     else
         l = 1
     end
-    # Given l, then it is easy to get c, thus the utility
+    # # Given l, then it is easy to get c, thus the utility
     c = z*k^α*l^(1-α) + (1-δ)*k - kp
     if c>0
         return c^(1-σ)/(1-σ) - χ* l^(1+η)/(1+η)
@@ -156,9 +155,9 @@ function Solve_VFI_mat(n_k,χ,k_ss,p::Par)
     return V, G_kp, k_grid
 end
 
-@time V_20, G_kp_20, k_grid_20 =Solve_VFI_mat(5, χ, k_ss, p)
-@time V_50, G_kp_50, k_grid_50 =Solve_VFI_mat(10, χ, k_ss, p)
-@time V_100, G_kp_100, k_grid_100 =Solve_VFI_mat(20, χ, k_ss, p)
+@time V_20, G_kp_20, k_grid_20 =Solve_VFI_mat(20, χ, k_ss, p)
+@time V_50, G_kp_50, k_grid_50 =Solve_VFI_mat(50, χ, k_ss, p)
+@time V_100, G_kp_100, k_grid_100 =Solve_VFI_mat(100, χ, k_ss, p)
 
 function euler_error_report(n_k,χ,k_ss,p::Par)
     @unpack σ, η, α, δ, z = p
@@ -181,4 +180,4 @@ function euler_error_report(n_k,χ,k_ss,p::Par)
     return e_error
 end
 
-test = euler_error_report(4000,χ,k_ss,p)
+test = euler_error_report(50,χ,k_ss,p)
